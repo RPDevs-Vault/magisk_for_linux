@@ -85,7 +85,7 @@ adapt_the_script_for_pc() {
     sed -i 's/getprop/adb shell getprop/g' util_functions.sh 
 
     # Adb
-    echo "Waiting for adb conenction"
+    echo "Waiting for adb connection"
     echo ""
     while true; do adb get-state > /dev/null 2>&1 && break; done
 }
@@ -117,16 +117,16 @@ Choose an option:  "
             install_dependencies
             
             # Delete old dir
-            echo "Deleteting old dir"
+            echo "Deleting old dir"
             rm -rf $HOME/Magisk
             
             # Make a dir for download
             mkdir $HOME/Magisk
             cd $HOME/Magisk
             
-            # Download lastest release
+            # Download latest release
             echo ""
-            echo "Downloading lastest magisk"
+            echo "Downloading latest magisk"
             echo ""
             wget $(curl -s https://api.github.com/repos/topjohnwu/Magisk/releases/latest | grep 'browser_download_url' | cut -d\" -f4)
             
@@ -140,7 +140,7 @@ Choose an option:  "
             mkdir $HOME/Magisk/wokdir
             unzip $HOME/Magisk/Magisk* -d $HOME/Magisk/wokdir
             
-            # Create direcorty where file will be copied
+            # Create directory where file will be copied
             mkdir $HOME/Magisk/pc_magisk
             
             # Copy all files needed
@@ -171,9 +171,9 @@ Choose an option:  "
             mkdir $HOME/Magisk
             cd $HOME/Magisk
             
-            # Download lastest release
+            # Download latest release
             echo ""
-            echo "Downloading lastest magisk"
+            echo "Downloading latest magisk"
             echo ""
             wget https://raw.githubusercontent.com/topjohnwu/magisk-files/canary/app-debug.apk
             
